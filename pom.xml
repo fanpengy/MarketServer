@@ -135,11 +135,6 @@
           <artifactId>fastjson</artifactId>
           <version>1.2.36</version>
       </dependency>
-    <dependency>
-      <groupId>com.learn.db</groupId>
-      <artifactId>file-db</artifactId>
-      <version>1.0</version>
-    </dependency>
   </dependencies>
 
   <build>
