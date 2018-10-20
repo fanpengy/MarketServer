@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Repository
 public class UserDao extends BaseDao<User>{
 
-    @Override
+    /*@Override
     public List<User> query(User user) {
         return super.get().stream().filter(u -> {
             boolean eq = true;
@@ -19,5 +19,5 @@ public class UserDao extends BaseDao<User>{
             }
             return eq;
         }).collect(Collectors.toList());
-    }
+    }*/
 }
