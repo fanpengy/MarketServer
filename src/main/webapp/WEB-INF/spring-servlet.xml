@@ -15,6 +15,7 @@
         <mvc:message-converters>
             <bean id="mappingJacksonHttpMessageConverter"
                   class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper"/>
                 <property name="supportedMediaTypes">
                     <list>
                         <value>text/html;charset=UTF-8</value>
@@ -26,6 +27,9 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean id="objectMapper" class="com.market.util.JsonUtils"
+          factory-method="getObjectMapperInstance"/>
 
     <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
         <!-- Turn off working out content type based on URL file extension, should
