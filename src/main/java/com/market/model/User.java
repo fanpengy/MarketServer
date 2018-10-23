@@ -10,6 +10,8 @@ public class User extends BaseModel implements Serializable {
     private Integer pwd;
     private Integer identity;//1是游客，2是商户
 
+    // TODO: 2018/10/23 创建空构造器
+
     public User(String name, Integer pwd) {
         this.name = name;
         this.pwd = pwd;

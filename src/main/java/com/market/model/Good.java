@@ -7,6 +7,12 @@ public class Good extends BaseModel implements Serializable {
     private Integer num;
     private Long sId;
 
+    /**
+     * model要创建空构造器
+     */
+    public Good() {
+    }
+
     public Good(Long sId) {
         this.sId = sId;
     }
