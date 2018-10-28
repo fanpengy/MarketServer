@@ -25,8 +25,8 @@ public class UserController {
     @ResponseBody
     public List<User> ad(){
 
-        userDao.insert(new User("张三",111,1));
-        userDao.insert(new User("李四",222,2));
+        userDao.insert(new User("1",1,1));
+        userDao.insert(new User("2",2,2));
         userDao.flush();
         return userDao.query(new User(null,null,null));
     }
