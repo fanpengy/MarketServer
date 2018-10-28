@@ -1,8 +1,10 @@
 package com.market.controller;
 
 import com.market.dao.GoodDao;
+import com.market.dao.ShoppingCartDao;
 import com.market.dao.UserDao;
 import com.market.model.Good;
+import com.market.model.ShoppingCart;
 import com.market.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,8 @@ public class GoodController {
     private GoodDao goodDao;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private ShoppingCartDao shoppingCartDao;
 
     @RequestMapping(value = "addGood",produces = "application/json")
     @ResponseBody
@@ -70,4 +74,15 @@ public class GoodController {
         }
         return newgoodlist;
     }
+    @RequestMapping("queryaddedlist")
+    @ResponseBody
+    public List<Good> queryaddedlist(Long customerid){
+        List<Long> addedgoodidlist = shoppingCartDao.query(new ShoppingCart(customerid)).get(0).getGoodidlist();
+        List<Good> addedgoodlist = new ArrayList<>();
+        for (Long goodid : addedgoodidlist){
+            addedgoodlist.add(goodDao.queryById(goodid));//用querybyid，尽量不用query
+        }
+        return addedgoodlist;
+    }
+    //研究用批量id查询数据
 }

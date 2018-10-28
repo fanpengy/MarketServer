@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -95,7 +96,9 @@ public class UserController {
             //绑定一个购物车，通过customerid关联
             ShoppingCart shoppingCart = new ShoppingCart();
             shoppingCart.setCustomerid(customer.getId());
+            shoppingCart.setGoodidlist(new ArrayList<>());
             shoppingCartDao.insert(shoppingCart);
+
             return 0;
         } else {
             return 1;

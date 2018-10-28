@@ -18,8 +18,6 @@ public class ShoppingCartController {
     private ShoppingCartDao shoppingCartDao;
     @Autowired
     private GoodDao goodDao;
-    @Autowired
-    private ShoppingCart shoppingCart;
 
     @RequestMapping("addgood")
     @ResponseBody
