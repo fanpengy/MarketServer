@@ -12,6 +12,10 @@ public class User extends BaseModel implements Serializable {
 
     // TODO: 2018/10/23 创建空构造器
 
+
+    public User() {
+    }
+
     public User(String name, Integer pwd) {
         this.name = name;
         this.pwd = pwd;

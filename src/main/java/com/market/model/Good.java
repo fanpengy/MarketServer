@@ -3,9 +3,9 @@ import com.db.file.model.BaseModel;
 import java.io.Serializable;
 
 public class Good extends BaseModel implements Serializable {
-    private String name;
+    private String goodName;
     private Integer num;
-    private Long sId;
+    private Long merchantId;
 
     /**
      * model要创建空构造器
@@ -13,19 +13,20 @@ public class Good extends BaseModel implements Serializable {
     public Good() {
     }
     public Good(Long id){
-        this.setsId(id);
+        this.setMerchantId(id);
     }
 
     /*public Good(Long sId) {
         this.sId = sId;
     }
 */
-    public String getName() {
-        return name;
+
+    public String getGoodName() {
+        return goodName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGoodName(String goodName) {
+        this.goodName = goodName;
     }
 
     public Integer getNum() {
@@ -36,11 +37,11 @@ public class Good extends BaseModel implements Serializable {
         this.num = num;
     }
 
-    public Long getsId() {
-        return sId;
+    public Long getMerchantId() {
+        return merchantId;
     }
 
-    public void setsId(Long sId) {
-        this.sId = sId;
+    public void setMerchantId(Long merchantId) {
+        this.merchantId = merchantId;
     }
 }
