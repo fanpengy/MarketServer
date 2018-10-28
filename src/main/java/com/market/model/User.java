@@ -23,6 +23,10 @@ public class User extends BaseModel implements Serializable {
         this.identity = identity;
     }
 
+    public User(Long id) {
+        this.setId(id);
+    }
+
     public String getName() {
         return name;
     }

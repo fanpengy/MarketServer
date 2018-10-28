@@ -12,11 +12,14 @@ public class Good extends BaseModel implements Serializable {
      */
     public Good() {
     }
-
-    public Good(Long sId) {
-        this.sId = sId;
+    public Good(Long id){
+        this.setsId(id);
     }
 
+    /*public Good(Long sId) {
+        this.sId = sId;
+    }
+*/
     public String getName() {
         return name;
     }
